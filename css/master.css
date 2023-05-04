@@ -1,0 +1,42 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+.contianer {
+  height: calc(100vh - 48px * 2);
+  background-color: white;
+}
+.speed {
+  font-size: 12px;
+  cursor: pointer;
+}
+.medhat {
+  font-weight: 900;
+  font-size: 60px;
+}
+pre {
+  overflow: visible;
+}
+.contentt {
+  height: calc(100% - 82px);
+}
+
+.photo {
+  overflow: hidden;
+}
+.photo::before {
+  content: "";
+  position: absolute;
+  width: 91%;
+  height: 62%;
+  background-color: #f8d7da;
+  z-index: 0;
+  border-radius: 50%;
+  bottom: -60px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.main-image {
+  position: relative;
+  z-index: 1;
+}
