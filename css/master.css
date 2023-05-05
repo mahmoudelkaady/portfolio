@@ -12,16 +12,12 @@ body {
 .medhat {
   font-weight: 900;
   font-size: 60px;
-}
-pre {
-  overflow: visible;
+  animation-name: example;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
 }
 .contentt {
   height: calc(100% - 82px);
-}
-
-.photo {
-  overflow: hidden;
 }
 .photo::before {
   content: "";
@@ -35,8 +31,79 @@ pre {
   left: 50%;
   transform: translate(-50%);
 }
-
-.main-image {
-  position: relative;
+.photo::after {
+  content: "";
+  position: absolute;
+  border-left: solid #f8d7da;
+  border-width: 120px;
+  height: 43%;
+  right: 12%;
+  top: 68%;
+  z-index: 2;
+  border-radius: 43%;
+  transform: rotate(57deg);
+}
+.after {
+  content: "";
+  position: absolute;
+  border-left: solid #f8d7da;
+  border-width: 120px;
+  height: 43%;
+  left: 13%;
+  top: 68%;
+  z-index: 2;
+  border-radius: 43%;
+  transform: rotate(-57deg);
+}
+.front {
+  width: 160px;
+  height: 88px;
+  position: absolute;
+  background: #f8d7da;
   z-index: 1;
+  bottom: -16px;
+  left: 50%;
+  transform: translate(-50%);
+  border-radius: 30%;
+}
+
+@keyframes moving {
+  50% {
+    transform: translateY(-15px);
+  }
+}
+@keyframes filter {
+  50% {
+    filter: grayscale(100%);
+  }
+}
+.main-image {
+  animation-name: moving, filter;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+@keyframes example {
+  0% {
+    color: black;
+  }
+  25% {
+    color: #a18689;
+  }
+  50% {
+    color: #f8d7da;
+  }
+  100% {
+    color: black;
+  }
+}
+
+.rotate:hover {
+  transform: rotate3d(1, 1, 1, 360deg);
+  transition: 0.5s;
+  color: rgb(13, 202, 240) !important;
+}
+
+.cv:hover {
+  background-color: rgb(13, 202, 240) !important;
+  border-color: rgb(13, 202, 240) !important;
 }
